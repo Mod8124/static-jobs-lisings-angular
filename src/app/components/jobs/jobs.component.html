@@ -1,0 +1,54 @@
+<section class="filter" *ngIf="filters.length >0">
+
+    <article 
+    class="filter__container">
+       <div *ngFor="let filter of filters; index as index" 
+       [class]="index === 0 ? 'filter_background--space filter_background' : 'filter_background' ">
+           <div class="filter__tag">{{filter}}</div>
+           <div class="filter__close" (click)="deleteFilters(index)"></div>
+       </div>
+    </article>
+
+    <article class="filter__clear">
+       <button class="filter__btnClear" *ngIf="filters.length > 1" (click)="clearFilters()">Clear</button>
+    </article>
+
+</section>
+
+<section class="job">
+
+    <article [class]="job.new && job.featured ? 'job__new job__normal':'job__normal'" *ngFor="let job of jobs">
+
+        <div class="job__logo">
+            <img class="job__logoImg" [src]="job.logo" [alt]="job.id + 'job'">
+        </div>
+    
+        <div class="job__info">
+
+            <div class="job__featuredContainer">
+                <h3 class="job__featured job__featured--space">{{job.company}}</h3>
+                <h4 class="job__featured job__featured--new" *ngIf="job.new">new!</h4>
+                <h4 class="job__featured job__featured--featured" *ngIf="job.featured">featured</h4>
+            </div>
+
+            <div class="job__position">
+                <h2 class="job__positionTitle">{{job.position}}</h2>
+            </div>
+
+            <div class="job__date">
+                <p class="job-dateI--space job__dateI">{{job.postedAt}}</p>
+                <p class="job__dateI">{{job.contract}}</p>
+                <p class="job__dateI">{{job.location}}</p>
+            </div>
+
+        </div>
+    
+        <div class="job__stack">
+            <button class="job__stackBtn job__stackBtn--space" (click)="addFilter(job.role)">{{job.role}}</button>
+            <button class="job__stackBtn" (click)="addFilter(job.level)">{{job.level}}</button>
+            <button class="job__stackBtn" *ngFor="let language of job.languages" (click)="addFilter(language)">{{language}}</button>
+            <button class="job__stackBtn" *ngFor="let tool of job.tools" (click)="addFilter(tool)">{{tool}}</button>
+        </div>
+    
+    </article>
+</section>

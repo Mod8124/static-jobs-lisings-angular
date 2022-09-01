@@ -1,0 +1,238 @@
+@import '/src/variables.scss';
+
+.filter {
+    background-color:white;
+    width: 90%;
+    margin:0 auto;
+    min-height: 70px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    margin-top: -50px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 6px 10px 1px hsl(180, 29%, 80%);
+
+    .filter__container {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .filter__clear {
+        height: 100%;
+        display: flex;
+        align-items:center;
+        justify-content:flex-end;
+        padding-right: 40px;
+
+        .filter__btnClear {
+            background: transparent;
+            border:none;
+            color:$DesaturatedDarkCyan;
+            cursor: pointer;
+            transition:all 0.5s ease-in-out;
+        }
+
+        .filter__btnClear:hover {
+            text-decoration:underline;
+        }
+    } 
+
+    .filter_background {
+        display: grid;
+        max-width: 120px;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        margin-left:15px;
+
+        .filter__tag {
+            background-color:$lightGrayishCyanFilter;
+            padding: 6px;
+            color:$DesaturatedDarkCyan;
+            display: flex;
+            align-items: center;
+            border-top-left-radius:6px ;
+            border-bottom-left-radius:6px ;
+        }
+    
+        .filter__close {
+            position: relative;
+            width: 25px;
+            height: 100%;
+            overflow: hidden;
+            background-color: $DesaturatedDarkCyan;
+            border-top-right-radius:6px ;
+            border-bottom-right-radius:6px ;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .filter__close:hover {
+            background-color: $veryDarkGrayishCyan;
+        }
+    
+        .filter__close::after {
+            position: absolute;
+            content: '';
+            width: 12%;
+            height: 60%;
+            left:42%;
+            top:20%;
+            background-color:white;
+            transform: rotate(50deg);
+        }
+    
+        .filter__close::before {
+            position: absolute;
+            content: '';
+            width: 12%;
+            height: 60%;
+            left:42%;
+            top:20%;
+            transform: rotate(-50deg);
+            background-color:white;
+        }
+    }
+          
+}
+
+// job 
+.job {
+    display: grid;
+    grid-template-columns: 77%;
+    justify-content: center;
+    margin-top: 75px;
+    grid-row-gap: 30px;
+    padding-bottom: 75px;
+}
+
+.job__new {
+    border-left: 6px solid $DesaturatedDarkCyan;
+
+}
+
+.job__normal {
+    display: grid;
+    grid-template-columns: 10% 40% 50%;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: white;
+    padding: 32px 32px 32px 32px;
+    box-shadow: 0px 4px 12px 1px hsl(180, 29%, 70%);
+
+    .job__logo {
+
+        .job__logoImg {
+            width: 100%;
+            height: 100%;
+            max-width: 80px;
+            object-fit: contain;
+        }
+    }
+
+    .job__info {
+        max-height: 82px;
+        display: grid;
+        grid-row-gap: 3px;
+
+        .job__featuredContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .job__featured {
+                margin: 0px;
+                padding: 0px;
+                margin-left:20px;
+                padding: 1px 5px 1px 5px;
+                border-radius:9px;
+
+            }
+
+            .job__featured--space {
+                margin-left: 0px;
+                color: $DesaturatedDarkCyan;
+                font-size: 14px;
+            }
+
+            .job__featured--new {
+                background-color: $DesaturatedDarkCyan;
+                color:white;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+
+            .job__featured--featured {
+                background-color: $veryDarkGrayishCyan;
+                color:white;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+        }
+
+        .job__position {
+
+            .job__positionTitle {
+                margin:0px;
+                padding:0px;
+                color:$veryDarkGrayishCyan;
+            }
+        }
+      
+        .job__date {
+            display: flex;
+            flex-direction: row;
+
+            .job__dateI {
+                margin:0px;
+                padding:0px;
+                margin-left: 20px;
+                color:$darkGrayishCyan;
+                font-size: 12px;
+
+            }
+
+            .job-dateI--space {
+                margin-left: 0px;
+            }
+        }
+    }
+
+    .job__stack {
+        display:flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .job__stackBtn {
+            background-color:$lightGrayishCyanFilter;
+            color:$DesaturatedDarkCyan;
+            margin:0px;
+            padding: 0px;
+            padding: 4px ;
+            margin-left: 20px;
+            border: none;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .job__stackBtn:hover {
+            background-color:$DesaturatedDarkCyan;
+            color:$lightGrayishCyanFilter;
+        }
+
+    }
+}
+
+
+@media screen and (min-width:1025px){
+    .filter {
+        width: 77%;
+    }
+}
