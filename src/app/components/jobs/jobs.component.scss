@@ -6,11 +6,13 @@
     margin:0 auto;
     min-height: 70px;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns:auto auto;
     align-items: center;
     margin-top: -50px;
     border-radius: 6px;
     overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
     box-shadow: 0px 6px 10px 1px hsl(180, 29%, 80%);
 
     .filter__container {
@@ -18,6 +20,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        flex-wrap: wrap;
+        row-gap: 10px;
     }
 
     .filter__clear {
@@ -30,12 +34,13 @@
         .filter__btnClear {
             background: transparent;
             border:none;
-            color:$DesaturatedDarkCyan;
+            color:$darkGrayishCyan;
             cursor: pointer;
             transition:all 0.5s ease-in-out;
         }
 
         .filter__btnClear:hover {
+            color:$DesaturatedDarkCyan;
             text-decoration:underline;
         }
     } 
@@ -43,6 +48,7 @@
     .filter_background {
         display: grid;
         max-width: 120px;
+        flex:auto auto;
         grid-template-columns: auto auto;
         justify-content: space-between;
         margin-left:15px;
@@ -104,7 +110,7 @@
     grid-template-columns: 77%;
     justify-content: center;
     margin-top: 75px;
-    grid-row-gap: 30px;
+    grid-row-gap: 40px;
     padding-bottom: 75px;
 }
 
@@ -115,19 +121,19 @@
 
 .job__normal {
     display: grid;
-    grid-template-columns: 10% 40% 50%;
+    grid-template-columns: 100%;
     border-radius: 6px;
-    overflow: hidden;
     background-color: white;
-    padding: 32px 32px 32px 32px;
+    padding:20px;
     box-shadow: 0px 4px 12px 1px hsl(180, 29%, 70%);
 
     .job__logo {
+        margin-top: -45px;
 
         .job__logoImg {
             width: 100%;
             height: 100%;
-            max-width: 80px;
+            max-width: 40px;
             object-fit: contain;
         }
     }
@@ -135,6 +141,8 @@
     .job__info {
         max-height: 82px;
         display: grid;
+        padding-top: 10px;
+        padding-bottom: 10px;
         grid-row-gap: 3px;
 
         .job__featuredContainer {
@@ -153,8 +161,10 @@
 
             .job__featured--space {
                 margin-left: 0px;
+                padding: 0px;
                 color: $DesaturatedDarkCyan;
                 font-size: 14px;
+                text-align: start;
             }
 
             .job__featured--new {
@@ -181,33 +191,49 @@
             .job__positionTitle {
                 margin:0px;
                 padding:0px;
+                font-size: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
                 color:$veryDarkGrayishCyan;
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .job__positionTitle:hover {
+                color:$DesaturatedDarkCyan;
             }
         }
       
-        .job__date {
-            display: flex;
-            flex-direction: row;
+    }
 
-            .job__dateI {
-                margin:0px;
-                padding:0px;
-                margin-left: 20px;
-                color:$darkGrayishCyan;
-                font-size: 12px;
+    .job__date {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 10px;
+        border-bottom:3px solid $lightGrayishCyanFilter;
 
-            }
+        .job__dateI {
+            margin:0px;
+            padding:0px;
+            margin-left: 20px;
+            color:$darkGrayishCyan;
+            font-size: 12px;
 
-            .job-dateI--space {
-                margin-left: 0px;
-            }
+        }
+
+        .job-dateI--space {
+            margin-left: 0px;
         }
     }
 
     .job__stack {
         display:flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding-top: 4px;
+        column-gap: 10px;
+        row-gap: 10px;
 
         .job__stackBtn {
             background-color:$lightGrayishCyanFilter;
@@ -215,12 +241,13 @@
             margin:0px;
             padding: 0px;
             padding: 4px ;
-            margin-left: 20px;
+            margin-left: 0px;
             border: none;
             transition: all 0.5s ease-in-out;
             cursor: pointer;
             border-radius: 4px;
         }
+        
 
         .job__stackBtn:hover {
             background-color:$DesaturatedDarkCyan;
@@ -230,9 +257,62 @@
     }
 }
 
+@media screen and (min-width:600px) {
+    .filter {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
 
 @media screen and (min-width:1025px){
     .filter {
         width: 77%;
+        grid-template-columns: 50% 50%;
+    }
+    //job 
+    .job {
+        grid-row-gap: 30px;
+    }
+    .job__normal {
+        grid-template-columns: 10% 40% 50%;
+        padding: 32px 32px 32px 32px;
+        overflow: hidden;
+
+        .job__logo {
+            margin-top: 0px;
+
+            .job__logoImg {
+                max-width: 80px;
+            }
+        }
+
+        .job__info {
+            padding-top: 0px;
+            padding-bottom: 0px;
+
+            .job__position {
+                .job__positionTitle {
+                    font-size: 22.5px;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                }
+            }
+        }
+        
+        .job__date {
+            padding-bottom: 0px;
+            border: none;
+        }
+
+        .job__stack {
+            padding-top: 0px;
+            justify-content: flex-end;
+            column-gap: 0px;
+            row-gap: 0px;
+
+            .job__stackBtn {
+                margin-left: 20px;
+            }
+        }
     }
 }
