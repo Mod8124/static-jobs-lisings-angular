@@ -14,7 +14,7 @@ Static job listings with filtering. This is a solution to the [Job listings with
 
 # 📲Links
 - Solution URl : [Github](https://github.com/Mod8124/static-jobs-lisings-angular.git)
-- Live Site : [Vercel](https://static-jobs-lisings-angular.vercel.app)
+- Live Site : [Vercel](static-jobs-listings-angular.vercel.app)
 
 # 💻Screenshot
 
